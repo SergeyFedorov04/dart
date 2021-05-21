@@ -6,7 +6,7 @@ main(List<String> args) {
 }
 
 Function outer() {
-  var n = 5;
+  var n = 7;
   return () {
     n++;
     print(n);
