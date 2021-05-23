@@ -1,16 +1,23 @@
 main(List<String> args) {
-  Person? pers = Person("Kate", 12);
-  pers.display();
+  Person bob = Person.undefined();
+  bob.display();
+
+  Person tom = Person.fromName("Tom");
+  tom.display();
+
+  Person sam = Person("Sam", 25);
+  sam.display();
 }
 
 class Person {
-  var name = "null";
-  int age = 0;
-  Person(n, a) {
-    name = n;
-    age = a;
-  }
+  String name = "";
+  dynamic age = "undefined";
+
+  Person.undefined() : this("undefinde", 188);
+  Person.fromName(name) : this(name, 18);
+  Person(this.name, this.age);
+
   void display() {
-    print("hello, my name is $name and my age is $age");
+    print("Name: $name Age: $age");
   }
 }
